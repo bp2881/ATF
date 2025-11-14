@@ -1,278 +1,103 @@
-[
-  {
-    "summary": {
-      "browser": "chrome",
-      "total": 10,
-      "passed": 10,
-      "failed": 0,
-      "success_rate": 100.0
-    },
-    "details": [
-      {
-        "action": "verify_exists",
-        "selector": "#contactForm",
-        "status": "passed",
-        "message": "Element exists",
-        "timestamp": "2025-11-14T22:07:59.711123",
-        "duration": 0.113
-      },
-      {
-        "action": "input",
-        "selector": "#name",
-        "status": "passed",
-        "message": "Input value: 'John'",
-        "timestamp": "2025-11-14T22:08:00.324188",
-        "duration": 0.228
-      },
-      {
-        "action": "input",
-        "selector": "#email",
-        "status": "passed",
-        "message": "Input value: 'john.doe@example.com'",
-        "timestamp": "2025-11-14T22:08:01.053147",
-        "duration": 0.164
-      },
-      {
-        "action": "select",
-        "selector": "#subject",
-        "status": "passed",
-        "message": "Selected value: 'support'",
-        "timestamp": "2025-11-14T22:08:01.717594",
-        "duration": 0.152
-      },
-      {
-        "action": "input",
-        "selector": "#message",
-        "status": "passed",
-        "message": "Input value: 'I need help with my account login'",
-        "timestamp": "2025-11-14T22:08:02.370661",
-        "duration": 0.185
-      },
-      {
-        "action": "verify_text",
-        "selector": "#name",
-        "status": "passed",
-        "message": "Text verification passed: 'John' found",
-        "timestamp": "2025-11-14T22:08:03.056324",
-        "duration": 0.063
-      },
-      {
-        "action": "click",
-        "selector": "#submitBtn",
-        "status": "passed",
-        "message": "Element clicked successfully",
-        "timestamp": "2025-11-14T22:08:03.620438",
-        "duration": 0.172
-      },
-      {
-        "action": "wait",
-        "selector": "",
-        "status": "passed",
-        "message": "Waited 1.0s",
-        "timestamp": "2025-11-14T22:08:04.293059",
-        "duration": 1.0
-      },
-      {
-        "action": "verify_visible",
-        "selector": "#result",
-        "status": "passed",
-        "message": "Element is visible",
-        "timestamp": "2025-11-14T22:08:05.794091",
-        "duration": 0.03
-      },
-      {
-        "action": "verify_text",
-        "selector": "#result",
-        "status": "passed",
-        "message": "Text verification passed: 'Success' found",
-        "timestamp": "2025-11-14T22:08:06.324782",
-        "duration": 0.024
-      }
-    ],
-    "timestamp": "2025-11-14 22:08:06"
+{
+  "summary": {
+    "browser": "chrome",
+    "total": 10,
+    "passed": 10,
+    "failed": 0,
+    "success_rate": 100.0,
+    "duration": 1.906
   },
-  {
-    "summary": {
-      "browser": "firefox",
-      "total": 10,
-      "passed": 10,
-      "failed": 0,
-      "success_rate": 100.0
+  "details": [
+    {
+      "action": "verify_exists",
+      "selector": "#contactForm",
+      "status": "passed",
+      "message": "Element exists",
+      "timestamp": "2025-11-14T23:01:32.458351",
+      "screenshot": null,
+      "duration": 0.048
     },
-    "details": [
-      {
-        "action": "verify_exists",
-        "selector": "#contactForm",
-        "status": "passed",
-        "message": "Element exists",
-        "timestamp": "2025-11-14T22:08:19.620009",
-        "duration": 0.011
-      },
-      {
-        "action": "input",
-        "selector": "#name",
-        "status": "passed",
-        "message": "Input value: 'John'",
-        "timestamp": "2025-11-14T22:08:20.142404",
-        "duration": 0.25
-      },
-      {
-        "action": "input",
-        "selector": "#email",
-        "status": "passed",
-        "message": "Input value: 'john.doe@example.com'",
-        "timestamp": "2025-11-14T22:08:20.900807",
-        "duration": 0.027
-      },
-      {
-        "action": "select",
-        "selector": "#subject",
-        "status": "passed",
-        "message": "Selected value: 'support'",
-        "timestamp": "2025-11-14T22:08:21.429149",
-        "duration": 0.085
-      },
-      {
-        "action": "input",
-        "selector": "#message",
-        "status": "passed",
-        "message": "Input value: 'I need help with my account login'",
-        "timestamp": "2025-11-14T22:08:22.015247",
-        "duration": 0.099
-      },
-      {
-        "action": "verify_text",
-        "selector": "#name",
-        "status": "passed",
-        "message": "Text verification passed: 'John' found",
-        "timestamp": "2025-11-14T22:08:22.615639",
-        "duration": 0.017
-      },
-      {
-        "action": "click",
-        "selector": "#submitBtn",
-        "status": "passed",
-        "message": "Element clicked successfully",
-        "timestamp": "2025-11-14T22:08:23.132907",
-        "duration": 0.082
-      },
-      {
-        "action": "wait",
-        "selector": "",
-        "status": "passed",
-        "message": "Waited 1.0s",
-        "timestamp": "2025-11-14T22:08:23.715809",
-        "duration": 1.0
-      },
-      {
-        "action": "verify_visible",
-        "selector": "#result",
-        "status": "passed",
-        "message": "Element is visible",
-        "timestamp": "2025-11-14T22:08:25.216808",
-        "duration": 0.019
-      },
-      {
-        "action": "verify_text",
-        "selector": "#result",
-        "status": "passed",
-        "message": "Text verification passed: 'Success' found",
-        "timestamp": "2025-11-14T22:08:25.736723",
-        "duration": 0.009
-      }
-    ],
-    "timestamp": "2025-11-14 22:08:26"
-  },
-  {
-    "summary": {
-      "browser": "edge",
-      "total": 10,
-      "passed": 10,
-      "failed": 0,
-      "success_rate": 100.0
+    {
+      "action": "input",
+      "selector": "#name",
+      "status": "passed",
+      "message": "Input value: 'John'",
+      "timestamp": "2025-11-14T23:01:33.007020",
+      "screenshot": null,
+      "duration": 0.172
     },
-    "details": [
-      {
-        "action": "verify_exists",
-        "selector": "#contactForm",
-        "status": "passed",
-        "message": "Element exists",
-        "timestamp": "2025-11-14T22:08:42.711308",
-        "duration": 0.023
-      },
-      {
-        "action": "input",
-        "selector": "#name",
-        "status": "passed",
-        "message": "Input value: 'John'",
-        "timestamp": "2025-11-14T22:08:43.235403",
-        "duration": 0.176
-      },
-      {
-        "action": "input",
-        "selector": "#email",
-        "status": "passed",
-        "message": "Input value: 'john.doe@example.com'",
-        "timestamp": "2025-11-14T22:08:43.912603",
-        "duration": 0.147
-      },
-      {
-        "action": "select",
-        "selector": "#subject",
-        "status": "passed",
-        "message": "Selected value: 'support'",
-        "timestamp": "2025-11-14T22:08:44.560496",
-        "duration": 0.173
-      },
-      {
-        "action": "input",
-        "selector": "#message",
-        "status": "passed",
-        "message": "Input value: 'I need help with my account login'",
-        "timestamp": "2025-11-14T22:08:45.233764",
-        "duration": 0.201
-      },
-      {
-        "action": "verify_text",
-        "selector": "#name",
-        "status": "passed",
-        "message": "Text verification passed: 'John' found",
-        "timestamp": "2025-11-14T22:08:45.935558",
-        "duration": 0.102
-      },
-      {
-        "action": "click",
-        "selector": "#submitBtn",
-        "status": "passed",
-        "message": "Element clicked successfully",
-        "timestamp": "2025-11-14T22:08:46.537976",
-        "duration": 0.195
-      },
-      {
-        "action": "wait",
-        "selector": "",
-        "status": "passed",
-        "message": "Waited 1.0s",
-        "timestamp": "2025-11-14T22:08:47.233881",
-        "duration": 1.001
-      },
-      {
-        "action": "verify_visible",
-        "selector": "#result",
-        "status": "passed",
-        "message": "Element is visible",
-        "timestamp": "2025-11-14T22:08:48.737334",
-        "duration": 0.056
-      },
-      {
-        "action": "verify_text",
-        "selector": "#result",
-        "status": "passed",
-        "message": "Text verification passed: 'Success' found",
-        "timestamp": "2025-11-14T22:08:49.293462",
-        "duration": 0.027
-      }
-    ],
-    "timestamp": "2025-11-14 22:08:49"
-  }
-]
+    {
+      "action": "input",
+      "selector": "#email",
+      "status": "passed",
+      "message": "Input value: 'john.doe@example.com'",
+      "timestamp": "2025-11-14T23:01:33.679070",
+      "screenshot": null,
+      "duration": 0.136
+    },
+    {
+      "action": "select",
+      "selector": "#subject",
+      "status": "passed",
+      "message": "Selected value: 'support'",
+      "timestamp": "2025-11-14T23:01:34.315325",
+      "screenshot": null,
+      "duration": 0.124
+    },
+    {
+      "action": "input",
+      "selector": "#message",
+      "status": "passed",
+      "message": "Input value: 'I need help with my account login'",
+      "timestamp": "2025-11-14T23:01:34.939325",
+      "screenshot": null,
+      "duration": 0.133
+    },
+    {
+      "action": "verify_text",
+      "selector": "#name",
+      "status": "passed",
+      "message": "Text verification passed: 'John' found",
+      "timestamp": "2025-11-14T23:01:35.573577",
+      "screenshot": null,
+      "duration": 0.066
+    },
+    {
+      "action": "click",
+      "selector": "#submitBtn",
+      "status": "passed",
+      "message": "Element clicked successfully",
+      "timestamp": "2025-11-14T23:01:36.140428",
+      "screenshot": null,
+      "duration": 0.126
+    },
+    {
+      "action": "wait",
+      "selector": "",
+      "status": "passed",
+      "message": "Waited 1.0s",
+      "timestamp": "2025-11-14T23:01:36.766366",
+      "screenshot": null,
+      "duration": 1.0
+    },
+    {
+      "action": "verify_visible",
+      "selector": "#result",
+      "status": "passed",
+      "message": "Element is visible",
+      "timestamp": "2025-11-14T23:01:38.267444",
+      "screenshot": null,
+      "duration": 0.059
+    },
+    {
+      "action": "verify_text",
+      "selector": "#result",
+      "status": "passed",
+      "message": "Text verification passed: 'Success' found",
+      "timestamp": "2025-11-14T23:01:38.827995",
+      "screenshot": null,
+      "duration": 0.042
+    }
+  ],
+  "timestamp": "2025-11-14 23:01:39"
+}
