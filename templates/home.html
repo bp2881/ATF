@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Test Automation Studio</title>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='style.css') }}" />
+	</head>
+	<body>
+		<div class="bg-grid"></div>
+		<div class="bg-gradient"></div>
+
+		<div class="container">
+			<header>
+				<h1>Test Automation Studio</h1>
+				<p class="subtitle">
+					Upload, manage, and execute automated tests with precision
+				</p>
+			</header>
+
+			<div class="main-grid">
+				<div class="panel">
+					<div class="panel-header">
+						<div class="panel-icon">📤</div>
+						<h2 class="panel-title">New Test Suite</h2>
+					</div>
+
+					<div class="input-group">
+						<label class="input-label">Test Name</label>
+						<input
+							type="text"
+							id="testName"
+							placeholder="e.g., Login Flow Test" />
+					</div>
+
+					<div class="input-group">
+						<label class="input-label">HTML File</label>
+						<div class="file-upload">
+							<input
+								type="file"
+								id="htmlFile"
+								accept=".html"
+								onchange="updateFileName(this, 'htmlLabel')" />
+							<label
+								class="file-upload-label"
+								id="htmlLabel">
+								<span class="file-upload-text">
+									<span>📄</span>
+									<span>Choose HTML file</span>
+								</span>
+								<span style="color: #71717a">Browse</span>
+							</label>
+						</div>
+					</div>
+
+					<div class="input-group">
+						<label class="input-label">JSON Actions</label>
+						<div class="file-upload">
+							<input
+								type="file"
+								id="jsonFile"
+								accept=".json"
+								onchange="updateFileName(this, 'jsonLabel')" />
+							<label
+								class="file-upload-label"
+								id="jsonLabel">
+								<span class="file-upload-text">
+									<span>📋</span>
+									<span>Choose JSON file</span>
+								</span>
+								<span style="color: #71717a">Browse</span>
+							</label>
+						</div>
+					</div>
+
+					<button
+						class="btn"
+						onclick="uploadFiles()">
+						<span>Upload Test Suite</span>
+					</button>
+				</div>
+
+				<div class="panel">
+					<div class="panel-header">
+						<div class="panel-icon">🗂️</div>
+						<h2 class="panel-title">Saved Tests</h2>
+					</div>
+
+					<div class="input-group">
+						<label class="input-label">Browser Configuration</label>
+						<select
+							id="browser"
+							class="browser-select">
+							<option value="chrome">Chrome</option>
+							<option value="firefox">Firefox</option>
+							<option value="edge">Edge</option>
+							<option value="all">All Browsers</option>
+						</select>
+					</div>
+
+					<div class="input-group">
+						<label class="checkbox-container">
+							<input
+								type="checkbox"
+								id="headless" />
+							<span class="checkbox-label"
+								>Run in Headless Mode</span
+							>
+						</label>
+					</div>
+
+					<div
+						id="filesList"
+						class="tests-grid"></div>
+				</div>
+			</div>
+
+			<div
+				id="testResults"
+				class="results-section"></div>
+		</div>
+
+		<script src="{{ url_for('static', filename='script.js') }}"></script>
+	</body>
+</html>

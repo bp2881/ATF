@@ -1,0 +1,76 @@
+{
+  "summary": {
+    "browser": "chrome",
+    "total": 8,
+    "passed": 8,
+    "failed": 0,
+    "success_rate": 100.0
+  },
+  "details": [
+    {
+      "action": "verify_exists",
+      "selector": "#loginForm",
+      "status": "passed",
+      "message": "",
+      "timestamp": "2025-11-14T21:58:21.060144",
+      "duration": 0.012
+    },
+    {
+      "action": "input",
+      "selector": "#username",
+      "status": "passed",
+      "message": "",
+      "timestamp": "2025-11-14T21:58:21.072425",
+      "duration": 0.089
+    },
+    {
+      "action": "input",
+      "selector": "#password",
+      "status": "passed",
+      "message": "",
+      "timestamp": "2025-11-14T21:58:21.161924",
+      "duration": 0.078
+    },
+    {
+      "action": "click",
+      "selector": "#remember",
+      "status": "passed",
+      "message": "",
+      "timestamp": "2025-11-14T21:58:21.239542",
+      "duration": 0.064
+    },
+    {
+      "action": "click",
+      "selector": "#loginBtn",
+      "status": "passed",
+      "message": "",
+      "timestamp": "2025-11-14T21:58:21.303483",
+      "duration": 0.054
+    },
+    {
+      "action": "wait",
+      "selector": "",
+      "status": "passed",
+      "message": "",
+      "timestamp": "2025-11-14T21:58:21.357217",
+      "duration": 0.501
+    },
+    {
+      "action": "verify_visible",
+      "selector": "#message",
+      "status": "passed",
+      "message": "",
+      "timestamp": "2025-11-14T21:58:21.857861",
+      "duration": 1.498
+    },
+    {
+      "action": "verify_text",
+      "selector": "#message",
+      "status": "passed",
+      "message": "",
+      "timestamp": "2025-11-14T21:58:23.355684",
+      "duration": 0.037
+    }
+  ],
+  "timestamp": "2025-11-14 21:58:23"
+}

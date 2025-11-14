@@ -1,0 +1,92 @@
+{
+  "summary": {
+    "browser": "firefox",
+    "total": 10,
+    "passed": 10,
+    "failed": 0,
+    "success_rate": 100.0
+  },
+  "details": [
+    {
+      "action": "verify_exists",
+      "selector": "#contactForm",
+      "status": "passed",
+      "message": "Element exists",
+      "timestamp": "2025-11-14T22:06:37.444033",
+      "duration": 0.131
+    },
+    {
+      "action": "input",
+      "selector": "#name",
+      "status": "passed",
+      "message": "Input value: 'John'",
+      "timestamp": "2025-11-14T22:06:38.075726",
+      "duration": 0.457
+    },
+    {
+      "action": "input",
+      "selector": "#email",
+      "status": "passed",
+      "message": "Input value: 'john.doe@example.com'",
+      "timestamp": "2025-11-14T22:06:39.033986",
+      "duration": 0.322
+    },
+    {
+      "action": "select",
+      "selector": "#subject",
+      "status": "passed",
+      "message": "Selected value: 'support'",
+      "timestamp": "2025-11-14T22:06:39.856458",
+      "duration": 0.09
+    },
+    {
+      "action": "input",
+      "selector": "#message",
+      "status": "passed",
+      "message": "Input value: 'I need help with my account login'",
+      "timestamp": "2025-11-14T22:06:40.446703",
+      "duration": 0.166
+    },
+    {
+      "action": "verify_text",
+      "selector": "#name",
+      "status": "passed",
+      "message": "Text verification passed: 'John' found",
+      "timestamp": "2025-11-14T22:06:41.113401",
+      "duration": 0.109
+    },
+    {
+      "action": "click",
+      "selector": "#submitBtn",
+      "status": "passed",
+      "message": "Element clicked successfully",
+      "timestamp": "2025-11-14T22:06:41.723213",
+      "duration": 0.137
+    },
+    {
+      "action": "wait",
+      "selector": "",
+      "status": "passed",
+      "message": "Waited 1.0s",
+      "timestamp": "2025-11-14T22:06:42.360533",
+      "duration": 1.001
+    },
+    {
+      "action": "verify_visible",
+      "selector": "#result",
+      "status": "passed",
+      "message": "Element is visible",
+      "timestamp": "2025-11-14T22:06:43.861957",
+      "duration": 0.019
+    },
+    {
+      "action": "verify_text",
+      "selector": "#result",
+      "status": "passed",
+      "message": "Text verification passed: 'Success' found",
+      "timestamp": "2025-11-14T22:06:44.382264",
+      "duration": 0.008
+    }
+  ],
+  "timestamp": "2025-11-14 22:06:44"
+}

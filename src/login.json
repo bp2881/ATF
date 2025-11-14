@@ -1,0 +1,37 @@
+[
+  {
+    "type": "verify_exists",
+    "selector": "#loginForm"
+  },
+  {
+    "type": "input",
+    "selector": "#username",
+    "value": "admin"
+  },
+  {
+    "type": "input",
+    "selector": "#password",
+    "value": "password123"
+  },
+  {
+    "type": "click",
+    "selector": "#remember"
+  },
+  {
+    "type": "click",
+    "selector": "#loginBtn"
+  },
+  {
+    "type": "wait",
+    "duration": 500
+  },
+  {
+    "type": "verify_visible",
+    "selector": "#message"
+  },
+  {
+    "type": "verify_text",
+    "selector": "#message",
+    "expected": "Login successful"
+  }
+]

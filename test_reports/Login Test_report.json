@@ -1,0 +1,67 @@
+{
+  "summary": {
+    "total": 8,
+    "passed": 8,
+    "failed": 0,
+    "success_rate": 100.0
+  },
+  "details": [
+    {
+      "action": "verify_exists",
+      "selector": "#loginForm",
+      "status": "passed",
+      "message": "Element exists: #loginForm",
+      "timestamp": "2025-11-14T19:04:09.689752"
+    },
+    {
+      "action": "input",
+      "selector": "#username",
+      "status": "passed",
+      "message": "Successfully input 'admin' into #username",
+      "timestamp": "2025-11-14T19:04:09.820374"
+    },
+    {
+      "action": "input",
+      "selector": "#password",
+      "status": "passed",
+      "message": "Successfully input 'password123' into #password",
+      "timestamp": "2025-11-14T19:04:10.023899"
+    },
+    {
+      "action": "click",
+      "selector": "#remember",
+      "status": "passed",
+      "message": "Successfully clicked element: #remember",
+      "timestamp": "2025-11-14T19:04:10.204535"
+    },
+    {
+      "action": "click",
+      "selector": "#loginBtn",
+      "status": "passed",
+      "message": "Successfully clicked element: #loginBtn",
+      "timestamp": "2025-11-14T19:04:10.388052"
+    },
+    {
+      "action": "wait",
+      "selector": "",
+      "status": "passed",
+      "message": "Waited for 0.5s",
+      "timestamp": "2025-11-14T19:04:10.554572"
+    },
+    {
+      "action": "verify_visible",
+      "selector": "#message",
+      "status": "passed",
+      "message": "Element is visible: #message",
+      "timestamp": "2025-11-14T19:04:11.154886"
+    },
+    {
+      "action": "verify_text",
+      "selector": "#message",
+      "status": "passed",
+      "message": "Text verification passed. Found: 'Login successful'",
+      "timestamp": "2025-11-14T19:04:11.285596"
+    }
+  ],
+  "timestamp": "2025-11-14 19:04:11"
+}
