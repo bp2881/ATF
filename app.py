@@ -571,71 +571,97 @@ class TestManager:
         return []
     
     @staticmethod
-    def export_to_html(test_name: str, results: Dict) -> str:
-        """Export test results to HTML report"""
+    def export_to_html_multi_browser(test_name: str, results: Dict) -> str:
+        """Export multi-browser test results to HTML report"""
+        browsers_data = results.get('browsers', [])
+        summary = results.get('summary', {})
+        
         html_content = f"""
         <!DOCTYPE html>
         <html>
         <head>
-            <title>Test Report: {test_name}</title>
+            <title>Multi-Browser Test Report: {test_name}</title>
             <style>
                 body {{ font-family: Arial, sans-serif; margin: 20px; }}
-                .summary {{ background: #f0f0f0; padding: 15px; border-radius: 5px; }}
+                .summary {{ background: #f0f0f0; padding: 15px; border-radius: 5px; margin-bottom: 20px; }}
+                .browser-section {{ margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }}
                 .passed {{ color: green; }}
                 .failed {{ color: red; }}
-                table {{ width: 100%; border-collapse: collapse; margin-top: 20px; }}
+                table {{ width: 100%; border-collapse: collapse; margin-top: 10px; }}
                 th, td {{ border: 1px solid #ddd; padding: 8px; text-align: left; }}
                 th {{ background-color: #4CAF50; color: white; }}
                 img {{ max-width: 300px; cursor: pointer; }}
+                .browser-header {{ background: #2196F3; color: white; padding: 10px; border-radius: 3px; }}
             </style>
         </head>
         <body>
-            <h1>Test Report: {test_name}</h1>
+            <h1>Multi-Browser Test Report: {test_name}</h1>
             <div class="summary">
-                <h2>Summary</h2>
-                <p><strong>Browser:</strong> {results.get('summary', {}).get('browser', 'N/A')}</p>
-                <p><strong>Total Tests:</strong> {results.get('summary', {}).get('total', 0)}</p>
-                <p><strong>Passed:</strong> <span class="passed">{results.get('summary', {}).get('passed', 0)}</span></p>
-                <p><strong>Failed:</strong> <span class="failed">{results.get('summary', {}).get('failed', 0)}</span></p>
-                <p><strong>Success Rate:</strong> {results.get('summary', {}).get('success_rate', 0)}%</p>
+                <h2>Overall Summary</h2>
+                <p><strong>Total Browsers:</strong> {summary.get('total_browsers', 0)}</p>
+                <p><strong>Total Tests:</strong> {summary.get('total_tests', 0)}</p>
+                <p><strong>Total Passed:</strong> <span class="passed">{summary.get('total_passed', 0)}</span></p>
+                <p><strong>Total Failed:</strong> <span class="failed">{summary.get('total_failed', 0)}</span></p>
                 <p><strong>Timestamp:</strong> {results.get('timestamp', 'N/A')}</p>
             </div>
-            
-            <h2>Test Details</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Action</th>
-                        <th>Selector</th>
-                        <th>Status</th>
-                        <th>Message</th>
-                        <th>Duration</th>
-                        <th>Screenshot</th>
-                    </tr>
-                </thead>
-                <tbody>
         """
         
-        for idx, detail in enumerate(results.get('details', []), 1):
-            status_class = 'passed' if detail['status'] == 'passed' else 'failed'
-            screenshot = f"<img src='{detail['screenshot']}' alt='Screenshot'/>" if detail.get('screenshot') else 'N/A'
+        for browser_result in browsers_data:
+            browser_summary = browser_result.get('summary', {})
+            browser_name = browser_summary.get('browser', 'Unknown')
             
             html_content += f"""
-                    <tr>
-                        <td>{idx}</td>
-                        <td>{detail['action']}</td>
-                        <td>{detail.get('selector', 'N/A')}</td>
-                        <td class="{status_class}">{detail['status'].upper()}</td>
-                        <td>{detail['message']}</td>
-                        <td>{detail.get('duration', 0)}s</td>
-                        <td>{screenshot}</td>
-                    </tr>
+            <div class="browser-section">
+                <div class="browser-header">
+                    <h2>{browser_name.upper()} Results</h2>
+                </div>
+                <div style="padding: 10px;">
+                    <p><strong>Total Tests:</strong> {browser_summary.get('total', 0)}</p>
+                    <p><strong>Passed:</strong> <span class="passed">{browser_summary.get('passed', 0)}</span></p>
+                    <p><strong>Failed:</strong> <span class="failed">{browser_summary.get('failed', 0)}</span></p>
+                    <p><strong>Success Rate:</strong> {browser_summary.get('success_rate', 0)}%</p>
+                    <p><strong>Duration:</strong> {browser_summary.get('duration', 0)}s</p>
+                </div>
+                
+                <h3>Test Details</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Action</th>
+                            <th>Selector</th>
+                            <th>Status</th>
+                            <th>Message</th>
+                            <th>Duration</th>
+                            <th>Screenshot</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            """
+            
+            for idx, detail in enumerate(browser_result.get('details', []), 1):
+                status_class = 'passed' if detail['status'] == 'passed' else 'failed'
+                screenshot = f"<img src='{detail['screenshot']}' alt='Screenshot'/>" if detail.get('screenshot') else 'N/A'
+                
+                html_content += f"""
+                        <tr>
+                            <td>{idx}</td>
+                            <td>{detail['action']}</td>
+                            <td>{detail.get('selector', 'N/A')}</td>
+                            <td class="{status_class}">{detail['status'].upper()}</td>
+                            <td>{detail['message']}</td>
+                            <td>{detail.get('duration', 0)}s</td>
+                            <td>{screenshot}</td>
+                        </tr>
+                """
+            
+            html_content += """
+                    </tbody>
+                </table>
+            </div>
             """
         
         html_content += """
-                </tbody>
-            </table>
         </body>
         </html>
         """
@@ -793,12 +819,26 @@ def run_test():
         with test_lock:
             if test_name in active_tests:
                 active_tests[test_name].status = 'completed'
-        
-        # Save reports
-        TestManager.save_report(test_name, results)
-        TestManager.export_to_html(test_name, results)
-        
-        return jsonify(results)
+
+        # *** FIX: Create combined report structure for multi-browser tests ***
+        combined_report = {
+            'test_name': test_name,
+            'browser': 'all',
+            'browsers': results,  # List of browser results
+            'timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            'summary': {
+                'total_browsers': len(results),
+                'total_tests': sum(r.get('summary', {}).get('total', 0) for r in results),
+                'total_passed': sum(r.get('summary', {}).get('passed', 0) for r in results),
+                'total_failed': sum(r.get('summary', {}).get('failed', 0) for r in results)
+            }
+        }
+
+        # Save reports using multi-browser method
+        TestManager.save_report(test_name, combined_report)
+        TestManager.export_to_html_multi_browser(test_name, combined_report)
+
+        return jsonify(combined_report)
         
     except Exception as e:
         logger.error(f"Test execution error: {e}")

@@ -742,3 +742,55 @@ input[type="text"]:focus {
 .empty-state-text {
 	font-size: 1.1rem;
 }
+
+/* Add these styles to your existing style.css file */
+
+/* Multi-browser results styling */
+.details-header {
+	font-size: 1.15rem;
+	font-weight: 600;
+	color: #fafafa;
+	margin: 0 0 20px 0;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.details-header::before {
+	content: "";
+	width: 4px;
+	height: 24px;
+	background: linear-gradient(180deg, #8b5cf6, #ec4899);
+	border-radius: 2px;
+}
+
+/* Override for browser-specific headers */
+.details-section .details-header {
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-bottom: 16px;
+	border-bottom: 2px solid rgba(139, 92, 246, 0.2);
+}
+
+/* Responsive grid for browser stats */
+@media (max-width: 768px) {
+	.details-section > div[style*="grid-template-columns"] {
+		grid-template-columns: 1fr !important;
+	}
+}
+
+/* Enhanced stat boxes for browser sections */
+.details-section .stat-box {
+	transition: all 0.3s ease;
+}
+
+.details-section .stat-box:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+}
+
+/* Spacing between browser sections */
+.details-section + .details-section {
+	padding-top: 32px;
+	border-top: 1px solid rgba(139, 92, 246, 0.15);
+}
